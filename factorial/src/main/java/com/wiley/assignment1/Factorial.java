@@ -35,10 +35,19 @@ public class Factorial {
 
 		//YOUR CODE STARTS HERE
 
-		return -1;
+         if (scanner.hasNextInt()) { // Checking if user entered a number
+             int num = this.scanner.nextInt(); // Storing user Input
+
+             if (num >= 1 && num <= 10) { // If the number is valid
+                 return num;
+             }
+         }
+
+         // If user input was NOT a number OR the number was not between 1 and 10 (inclusive)
+         this.printStream.print("Invalid entry. Please enter an integer between 1 and 10, inclusive.");
+         return -1;
 
 		//YOUR CODE ENDS HERE
-		 
 			
 	 }
 	
@@ -52,9 +61,12 @@ public class Factorial {
 		*/
 		 
 		int result = 1;
+
 		//YOUR CODE STARTS HERE
 
- 
+         while (num != 1) { // Multiply numbers from num down to 2
+             result *= num--; // Multiply result by current num, then decrements
+         }
 
 		//YOUR CODE ENDS HERE
 		this.printStream.print("The Factorial is: " + result);		
